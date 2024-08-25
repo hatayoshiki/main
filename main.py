@@ -5,7 +5,6 @@ import random
 import pandas as pd
 import os
 
-
 # OpenAI APIキーを設定
 gmaps = googlemaps.Client(key='AIzaSyC99f9xKB7xWwuFzk56tx7EymEb-5Uatk8')
 openai.api_key = os.getenv("OPENAI_API_KEY")
@@ -42,7 +41,7 @@ def get_restaurants_nearby(lat, lng, radius=5000):  # サウナの近くの半�
 # OpenAIを使って気分を判定する関数
 def analyze_mood(prompt):
     response = openai.chat.completions.create   (
-        model="gpt-3.5-turbo",
+        model="gpt-4o",
         messages=[
              {"role": "system", "content": "あなたは日本語で応答するアシスタントです。"},
             {"role": "user", "content": prompt}
