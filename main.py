@@ -3,10 +3,12 @@ import googlemaps
 import streamlit as st
 import random
 import pandas as pd
+import os
+
 
 # OpenAI APIキーを設定
-openai.api_key = "sk-proj-v04JGh4skVOwRqAeATc7T3BlbkFJ8YymPqLgyYXtz44Rs3nF"
 gmaps = googlemaps.Client(key='AIzaSyC99f9xKB7xWwuFzk56tx7EymEb-5Uatk8')
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # 住所を緯度と経度に変換する関数
 def geocode_address(address):
